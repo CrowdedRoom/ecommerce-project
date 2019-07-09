@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+
+import HomePage from './pages/homepage.component';
+
+const HatsPage = () => {
+  return (
+    <div>
+      <h1>Hats For Sale</h1>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path='/' component={HomePage} />
+      <Route exact path='/shop/hats' component={HatsPage} />
+      <Route exact path='/shop/jackets' component={HatsPage} />
+      <Route exact path='/shop/shoes' component={HatsPage} />
+    </Switch>
   );
 }
 
